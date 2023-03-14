@@ -5,11 +5,10 @@ import empImg from '../asset/image/empty.jpg';
 
 const WrapperCard = styled.div`
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 260px auto;
   border: 1px solid #dfdfdf;
   border-radius: 0.5rem;
   width: 270px;
-  height: 300px;
   margin: 10px;
 `;
 
@@ -21,10 +20,9 @@ const WrapperContent = styled.div`
 
 const WrapperImg = styled.img`
   position: relative;
-  border-radius: 0.5rem 0.5rem 0 0; 
+  border-radius: 0.5rem; 
   width: 270px;
   height: 100%;
-  margin: 0;
 
 `;
 
@@ -39,8 +37,8 @@ const CardData: FC<CardDataProps> = ({headline, description, size, img, ...props
     <WrapperCard>
       <WrapperImg src={img ? img : empImg} />
       <WrapperContent>
-            <WrapperTitle>{headline ? headline : 'Head'}</WrapperTitle>
-            <WrapperDesc>{description ? description : 'Description'}</WrapperDesc>
+            {headline && <WrapperTitle>{headline ? headline : 'Head'}</WrapperTitle>}
+            {description && <WrapperDesc>{description ? description : 'Description'}</WrapperDesc>}
       </WrapperContent>
     </WrapperCard>
   );
