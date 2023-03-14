@@ -9,7 +9,7 @@ const middleware = (value:any) => (
 
 const Options: any = {
   name: 'card-data',
-  attributes: ['headline', 'description', 'img'],
+  attributes: ['headline', 'description', 'img', 'linkto'],
   middleware
  }
 

@@ -32,14 +32,24 @@ const WrapperDesc = styled.div``;
 
 
 
-const CardData: FC<CardDataProps> = ({headline, description, size, img, ...props}) => {
+const CardData: FC<CardDataProps> = ({...props}) => {
+  const {
+    headline,
+    description,
+    img,
+    linkto
+  } = props;
+
   return (
     <WrapperCard>
-      <WrapperImg src={img ? img : empImg} />
+        <a href={linkto || '#'} target='_blank' rel="noreferrer">
+          <WrapperImg src={img ? img : empImg} />
+        </a>
       <WrapperContent>
             {headline && <WrapperTitle>{headline ? headline : 'Head'}</WrapperTitle>}
             {description && <WrapperDesc>{description ? description : 'Description'}</WrapperDesc>}
       </WrapperContent>
+      
     </WrapperCard>
   );
 }
